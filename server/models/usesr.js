@@ -31,7 +31,7 @@ userSchema.methods.generateAuthToken = () => {
     return token;
 }
 
-const validate = (user) => {
+const validate = user => {
     const schema = Joi.object({
         name: Joi.string().min(5).max(10).required(),
         email: Joi.string().email().required(),
