@@ -5,7 +5,12 @@ const dbConnexion = require('./db');
 const PORT = process.env.PORT || 8080;
 const app = express();
 
-dbConnexion();
-app.listen(PORT, () => {
-    console.log(`Server is listening on http://localhost:8080`);
+const server = require('http');
+server.createServer((req, res) => {
+    res.write("hoola");
+    res.end();
 });
+app.listen(PORT, ()=> {
+    console.log("Server runing on the port 8080");
+});
+// dbConnexion();
